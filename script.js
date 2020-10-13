@@ -20,6 +20,8 @@
 
 // var docRef = db.collection("data").doc("lk");
 
+
+
 var totalInfected = document.getElementById('totalInfected');
 var activeCases = document.getElementById('activeCases');
 var recovered = document.getElementById('recovered');

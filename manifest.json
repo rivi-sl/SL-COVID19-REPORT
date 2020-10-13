@@ -4,7 +4,7 @@
 	"name" : "COVID-19 SL Report | Home",
 	"scope" : "/",
 	"display" : "browser",
-	"start_url" : "https://covid19-sl-report.netlify.app/",
+	"start_url" : "/",
 	"short_name" : "COVID-19 SL Report",
 	"theme_color" : "#151823",
 	"description" : "Stay safe at home with the latest news and updates on the COVID-19 status of Sri Lanka at your finger prints from the realtime updating website.",
@@ -12,8 +12,24 @@
 	"background_color" : "transparent",
 	"related_applications" : [],
 	"prefer_related_applications" : false,
-	"icons" : [],
-	"url" : "https://covid19-sl-report.netlify.app/",
+	"url" : "https://sl-covid19-report.netlify.app/",
 	"screenshots" : [],
-	"generated" : "true"
-}
+	"generated" : "true",
+	"icons": [
+		{
+		  "src": "images/images/sl-svg.svg",
+		  "sizes": "64x64 32x32 24x24 16x16",
+		  "type": "image/x-icon"
+		},
+		{
+		  "src": "images/images/sl-svg.svg",
+		  "type": "image/svg",
+		  "sizes": "192x192"
+		},
+		{
+		  "src": "images/images/sl-svg.svg",
+		  "type": "image/svg",
+		  "sizes": "512x512"
+		}
+	  ]
+} 
