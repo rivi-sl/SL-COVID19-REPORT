@@ -493,7 +493,8 @@ function detectBrowser() {
   }
 }
 
-const lk_historical_data_csv = 'https://raw.githubusercontent.com/arimacdev/covid19-srilankan-data/master/Daily/covid_lk.csv';
+// https://raw.githubusercontent.com/arimacdev/covid19-srilankan-data/master/Daily/covid_lk.csv
+const lk_historical_data_csv = 'https://raw.githubusercontent.com/microsoft/Bing-COVID-19-Data/master/data/Bing-COVID19-Data.csv';
 
 // getHistoryData();
 
@@ -510,30 +511,45 @@ async function getHistoryData(){
   // console.log(data_lk);
 
   const rows = data_lk.split('\n');
+  const rowsLength = rows.length;
   // console.log(rows);
   const headers = rows[0];
   const topics = headers.split(',');
+  var rowdata = [];
 
   headersLength = topics.length;
   for(a=0; a<headersLength; a++){
-    xAxisLabels_lk.push(topics[a]);
-    // console.log(topics[a]);
+    console.log(topics[a]);
   }
 
-  const casesDaily = rows[1].split(',');
-  casesDaily.forEach(elt => {
-    CasesData.push(elt);
-  });
+  for(a=0; a<rowsLength; a++){
+    rowdata = rows[a].split(',');
+    if(rowdata[12]=="Sri Lanka"){
+      console.log(true);
+      xAxisLabels_lk.push(rowdata[1]);
+      CasesData.push(rowdata[2]);
+      DeathsData.push(rowdata[4]);
+      RecoveriesData.push(rowdata[6]);
+    }
+  }
+  
+    
 
-  const deathsDaily = rows[2].split(',');
-  deathsDaily.forEach(elt => {
-    DeathsData.push(elt);
-  });
 
-  const recoveriesdaily = rows[3].split(',');
-  recoveriesdaily.forEach(elt => {
-    RecoveriesData.push(elt);
-  });
+  // const casesDaily = rows[1].split(',');
+  // casesDaily.forEach(elt => {
+  //   CasesData.push(elt);
+  // });
+
+  // const deathsDaily = rows[2].split(',');
+  // deathsDaily.forEach(elt => {
+  //   DeathsData.push(elt);
+  // });
+
+  // const recoveriesdaily = rows[3].split(',');
+  // recoveriesdaily.forEach(elt => {
+  //   RecoveriesData.push(elt);
+  // });
       
 
   return{xAxisLabels_lk, CasesData, DeathsData, RecoveriesData};
@@ -576,13 +592,15 @@ async function totalCasesCharts(){
           scales: {
               xAxes: [{
                   ticks: {
-                      fontColor: "rgb(190, 190, 190)", // this here
+                      fontColor: "rgb(190, 190, 190)",
+                      maxRotation: 90,
+                      minRotation: 90
                   }                  
               }],
               yAxes: [{
                   ticks: {
                       beginAtZero: false,
-                      fontColor: "rgb(190, 190, 190)", // this here
+                      fontColor: "rgb(190, 190, 190)", 
                   }                  
               }],
               scaleLabel: [{
@@ -598,5 +616,5 @@ async function totalCasesCharts(){
             },
         }
       }
-  });
+    });
 }
