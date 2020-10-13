@@ -3,39 +3,13 @@ layout: default
 title: Home
 ---
 
-<!-- <link href="./css/global.css" rel="stylesheet">
-
-<div class="container-xl margin-top-under-nav">
-  <div class="row">
-    <div class="col-xl-5 col-a">
-
-      bg-white-2 for white theme
-      <div class="card bg-dark-2">
-        <div class="card-body local-data text-white font-2">
-
-        </div>
-      </div>
-    </div>
-
-    <div class="col-xl-7 col-b">
-
-      bg-white-2 for white theme
-      <div class="card bg-dark-2">
-        <div class="card-body local-data text-white font-2">
-
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div> -->
 
 <div class="row mx-auto row-main-1" style="width: 100%;" onload="detectBrowser()" id="localDetails">
   <div class="col-xl-8 main-col-1 status-animation-find" tyle="width: 100%;">
 
     <div class="col-xl-6 col-10 font-2 mx-auto now-date-time margin-top-under-nav text-center">
-      <h2 class="now-time" id="nowTime">Now Time</h2>
       <h5 class="now-date" id="nowDate">Now Date</h5>
+      <h2 class="now-time" id="nowTime">Now Time</h2>
     </div>
 
     <div class="status-animation" id="status-animation">
@@ -50,7 +24,6 @@ title: Home
                 </div>
               </h2>
               <h4 class="animation-cards-item-subtitle">Active Cases</h2>
-                <img src="./virus.png" class="card-virus-cell">
             </span>
           </div>
           <div class="animation-cards-item d-flex align-items-center justify-content-center" onclick="hidestatuscard()">
@@ -62,7 +35,6 @@ title: Home
                 </div>
               </h2>
               <h4 class="animation-cards-item-subtitle">Recovered</h2>
-                <img src="./virus.png" class="card-virus-cell">
             </span>
           </div>
           <div class="animation-cards-item d-flex align-items-center justify-content-center" onclick="hidestatuscard()">
@@ -74,7 +46,6 @@ title: Home
                 </div>
               </h2>
               <h4 class="animation-cards-item-subtitle">Deaths</h2>
-                <img src="./virus.png" class="card-virus-cell">
             </span>
           </div>
           <div class="animation-cards-item d-flex align-items-center justify-content-center"
@@ -90,8 +61,6 @@ title: Home
     <div class="col-12 main-col-1-b table-sl-details-find" style="display: none;" id="table-sl-details"
       style="width: 100%;">
       <div class="col-10 mx-auto table-sl-details-1">
-        <img src="./virus.png" class="back-virus-cell-1">
-        <img src="./virus.png" class="back-virus-cell-2">
         <div class="justify-content-center card-deck">
           <div class="col col-details mb-4" onclick="hidetabledetails()">
             <div class="card card-details text-white bg-primary">
@@ -204,14 +173,30 @@ title: Home
 
 <h3 class="display-4 caption-2">Local Growth Details</h3>
 
-<canvas id="dataChart" width="400" height="100">
+<div class="chartArea">
+<div class="chartAreaWrapper">
+<canvas id="dataChart" width="100" height="10">
   Your browser does not support the canvas element.
 </canvas> 
+</div>
+</div>
 
 <style>
   #dataChart{
     padding: 0 10px;
+    /* position: absolute !important; */
   }
+
+  .chartArea {
+  z-index: 100;
+  width: 100%;
+  overflow-x: scroll;
+}
+
+.chartAreaWrapper {
+  width: 4000px;
+  overflow-x: scroll;
+} 
 </style>
 
 <script>
