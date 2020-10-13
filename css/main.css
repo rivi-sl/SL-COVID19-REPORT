@@ -268,6 +268,17 @@ body {
     font-size: 500%;
 }
 
+.animation-cards-item-count-new {
+    background: #2125296b;
+    padding: 5px;
+    margin: 10px;
+    font-size: 1.2rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
 .animation-cards-item-subtitle {
     font-family: 'Inconsolata', monospace;
     font-size: 200%;
