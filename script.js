@@ -22,15 +22,19 @@
 
 var totalInfected = document.getElementById('totalInfected');
 var activeCases = document.getElementById('activeCases');
+var activeCasesNew = document.getElementById('activeCasesNew');
 var recovered = document.getElementById('recovered');
 var suspected = document.getElementById('suspected');
 var deaths = document.getElementById('deaths');
+var deathsNew = document.getElementById('deathsNew');
 var deathRate = document.getElementById('deathRate');
 var recoveryRate = document.getElementById('recoveryRate');
 
 var activeCases2 = document.getElementById('activeCases-2');
 var recovered2 = document.getElementById('recovered-2');
 var deaths2 = document.getElementById('deaths-2');
+var activeCasesNew2 = document.getElementById('activeCasesNew2');
+var deathsNew2 = document.getElementById('deathsNew2');
 
 var month = new Array();
 month[0] = "Jan";
@@ -180,16 +184,20 @@ function getData(){
 
       totalInfectedno = json.data.local_total_cases;
       recoveredno = json.data.local_recovered;
+      casesnewno = json.data.local_new_cases;
       // suspectedno = doc.data().suspected;
       deathsno = json.data.local_deaths;
+      deathsnewno = json.data.local_new_deaths;
 
       window.document.title = '(' + totalInfectedno + ') ' + window.document.title ; 
 
       totalInfected.innerHTML = totalInfectedno;
       activeCases.innerHTML = totalInfectedno - (recoveredno + deathsno);
+      activeCasesNew.innerHTML = '+' + casesnewno;
       recovered.innerHTML = recoveredno;
       // suspected.innerHTML = suspectedno;
       deaths.innerHTML = deathsno;
+      deathsNew.innerHTML = '+' + deathsnewno;
 
       deathsRateno =  (deathsno/totalInfectedno)*100;
       recoveryRateno = (recoveredno/totalInfectedno)*100;
@@ -200,6 +208,8 @@ function getData(){
       activeCases2.innerHTML = totalInfectedno - (recoveredno + deathsno);
       recovered2.innerHTML = recoveredno;
       deaths2.innerHTML = deathsno;
+      activeCasesNew2.innerHTML = '+' + casesnewno;
+      deathsNew2.innerHTML = '+' + deathsnewno;
 
       // document.getElementById('loading-news').style.display = "none";
       // document.getElementById('myInput').style.display = "block";
@@ -610,7 +620,7 @@ async function totalCasesCharts(){
               }]
           },
           legend: {
-            position: 'bottom',
+            position: 'left',
             labels: {
                 fontColor: 'white',
             },

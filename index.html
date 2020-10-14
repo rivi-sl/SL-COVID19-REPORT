@@ -8,8 +8,8 @@ title: Home
   <div class="col-xl-8 main-col-1 status-animation-find" tyle="width: 100%;">
 
     <div class="col-xl-6 col-10 font-2 mx-auto now-date-time margin-top-under-nav text-center">
-      <h5 class="now-date" id="nowDate">Now Date</h5>
-      <h2 class="now-time" id="nowTime">Now Time</h2>
+      <h5 class="now-date" id="nowDate">Date</h5>
+      <h2 class="now-time" id="nowTime">Time</h2>
     </div>
 
     <div class="status-animation" id="status-animation">
@@ -23,6 +23,9 @@ title: Home
                   <div class="double-bounce2"></div>
                 </div>
               </h2>
+              <div id="activeCasesNew" class="animation-cards-item-count-new">
+                +00
+              </div>
               <h4 class="animation-cards-item-subtitle">Active Cases</h2>
             </span>
           </div>
@@ -45,6 +48,9 @@ title: Home
                   <div class="double-bounce2"></div>
                 </div>
               </h2>
+              <div id="deathsNew" class="animation-cards-item-count-new">
+                +00
+              </div>
               <h4 class="animation-cards-item-subtitle">Deaths</h2>
             </span>
           </div>
@@ -72,6 +78,9 @@ title: Home
                     <div class="double-bounce2"></div>
                   </div>
                 </h1>
+                <div id="activeCasesNew2" class="animation-cards-item-count-new">
+                  +00
+                </div>
               </div>
             </div>
           </div>
@@ -98,6 +107,9 @@ title: Home
                     <div class="double-bounce2"></div>
                   </div>
                 </h1>
+                <div id="deathsNew2" class="animation-cards-item-count-new">
+                  +00
+                </div>
               </div>
             </div>
           </div>
@@ -197,6 +209,12 @@ title: Home
   width: 4000px;
   overflow-x: scroll;
 } 
+
+@media only screen and (max-width: 576px) {
+  .chartAreaWrapper {
+    width: 2000px;
+  } 
+}
 </style>
 
 <script>
@@ -212,6 +230,7 @@ title: Home
   <div class="col-xl-4 main-col-1 main-col-b-1 margin-bottom-before-footer-xl" style="width: 100%;">
     <div class="col-xl-12 col-md-8 mx-auto font-1" id="hospitalDetails">
       <h3 class="display-4 caption-2">Hospital Details</h3>
+      <p class="text-center">(Individuals currently under investigations in hospitals)</p>
       <table class="table table-sm table-striped table-dark">
         <thead class="text-center">
           <tr>
