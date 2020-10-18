@@ -201,6 +201,7 @@ function countryDetailsFunction(t, letters) {
   let hr = document.createElement('hr');
 
   cardHTML.setAttribute('class', 'country-details-card bg-transparent-dark b-dark text-dark');
+  cardHTML.setAttribute('id', 'country-details-card');
   imgHTML.setAttribute('class', 'col-2 country_flag_image');
   img.setAttribute('class', 'country_flag');
   img.setAttribute('src', t.countryInfo.flag);
@@ -289,6 +290,23 @@ function countryDetailsFunction(t, letters) {
   }
 }
 
+function searchcountry() {
+  var input, filter, div, card, name, txtValue;
+  input = document.getElementById("searchcountry");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("nav-abc");
+  card = div.getElementsByClassName("country-details-card bg-transparent-dark b-dark text-dark");
+  for (i = 0; i < card.length; i++) {
+      name = card[i].getElementsByTagName("h4")[0];
+      txtValue = name.textContent || name.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          card[i].style.display = "";
+      } else {
+          card[i].style.display = "none";
+      }
+  }
+}
+
 // Historical Data
 
 
@@ -297,6 +315,9 @@ const url_to_historical_data_csv = 'https://raw.githubusercontent.com/CSSEGISand
 async function getHistoryData(){
   const xAxisLabels = [];
   const USData = [];
+  const IndiaData = [];
+  const BrazilData = [];
+  const FranceData = [];
   const SpainData = [];
   const ItalyData = [];
   const UKData = [];
@@ -330,6 +351,24 @@ async function getHistoryData(){
       const lengthUS = row.length;
       for(a=lengthUS-10; a<lengthUS; a++){
         USData.push(row[a]);
+      }
+    }
+    if((countryName == 'India') && (provinceName == '')){
+      const lengthUS = row.length;
+      for(a=lengthUS-10; a<lengthUS; a++){
+        IndiaData.push(row[a]);
+      }
+    }
+    if((countryName == 'Brazil') && (provinceName == '')){
+      const lengthUS = row.length;
+      for(a=lengthUS-10; a<lengthUS; a++){
+        BrazilData.push(row[a]);
+      }
+    }
+    if((countryName == 'France') && (provinceName == '')){
+      const lengthUS = row.length;
+      for(a=lengthUS-10; a<lengthUS; a++){
+        FranceData.push(row[a]);
       }
     }
     if((countryName == 'Spain') && (provinceName == '')){
@@ -371,7 +410,7 @@ async function getHistoryData(){
     }
   });
 
-  return{xAxisLabels, USData, SpainData, ItalyData, UKData, GermanyData, RussiaData, SLData};
+  return{xAxisLabels, USData, SpainData, ItalyData, UKData, GermanyData, RussiaData, SLData ,IndiaData ,BrazilData ,FranceData};
 }
 
 totalCasesCharts();
@@ -430,6 +469,27 @@ async function totalCasesCharts(){
               label: 'Total Cases USA',
               data: data.USData,
               borderColor: 'rgba(0, 123, 255)',
+              hoverBackgroundColor: '#fff',       
+              borderWidth: 3
+            },
+            {
+              label: 'Total Cases India',
+              data: data.IndiaData,
+              borderColor: 'rgba(248, 148, 6)',
+              hoverBackgroundColor: '#fff',       
+              borderWidth: 3
+            },
+            {
+              label: 'Total Cases Brazil',
+              data: data.BrazilData,
+              borderColor: 'rgba(51, 110, 123)',
+              hoverBackgroundColor: '#fff',       
+              borderWidth: 3
+            },
+            {
+              label: 'Total Cases France',
+              data: data.FranceData,
+              borderColor: 'rgba(255, 255, 240)',
               hoverBackgroundColor: '#fff',       
               borderWidth: 3
             },
