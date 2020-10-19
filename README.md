@@ -1,4 +1,4 @@
-# Covid-19 Sri Lankan Report
+#  Sri Lankan Covid-19 Report
 
    Visit the [website](https://sl-covid19-report.netlify.com/) and  get The Latest Updates
 
