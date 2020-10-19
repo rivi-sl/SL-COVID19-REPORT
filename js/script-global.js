@@ -410,7 +410,7 @@ async function getHistoryData(){
     }
   });
 
-  return{xAxisLabels, USData, SpainData, ItalyData, UKData, GermanyData, RussiaData, SLData ,IndiaData ,BrazilData ,FranceData};
+  return{xAxisLabels, USData, SpainData, ItalyData, UKData, GermanyData, RussiaData, SLData, IndiaData, BrazilData, FranceData};
 }
 
 totalCasesCharts();
