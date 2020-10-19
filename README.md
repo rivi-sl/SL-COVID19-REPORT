@@ -1,6 +1,6 @@
 # Covid-19 Sri Lankan Report
 
-   Visit the [website](https://covid19-sl-report.netlify.com/) and  get The Latest Updates
+   Visit the [website](https://sl-covid19-report.netlify.com/) and  get The Latest Updates
 
 ![Website](https://i.imgur.com/un7n8u4.png)
 		
@@ -25,6 +25,7 @@
 
  - [Supun Tharinda](https://github.com/STEdirisuriya)
  - [Hasala Heiyanthuduwa](https://github.com/Hasala2002)
+ - [Chamod Perera](https://github.com/chamodperera)
  - [Chamidu Jayanath](https://github.com/chamindujs)
  - [Chamuthu Megha](https://github.com/Chamuthu030828?tab=repositories)
  
@@ -32,7 +33,7 @@
 
 1. First, Clone the repository by,
 
-	`git clone https://github.com/STEdirisuriya/Covid19-sl-report.git`
+	`git clone https://github.com/rivi-sl/SL-COVID19-REPORT.git`
 
 2. Install Jekyll on your local PC
 	- [Install Jekyll on Windows](https://jekyllrb.com/docs/installation/windows/)		
