@@ -291,11 +291,10 @@ function countryDetailsFunction(t, letters) {
 }
 
 function searchcountry() {
-  var input, filter, div, card, name, txtValue;
+  var input, filter, card, name, txtValue;
   input = document.getElementById("searchcountry");
   filter = input.value.toUpperCase();
-  div = document.getElementById("nav-abc");
-  card = div.getElementsByClassName("country-details-card bg-transparent-dark b-dark text-dark");
+  card = document.getElementsByClassName("country-details-card bg-transparent-dark b-dark text-dark");
   for (i = 0; i < card.length; i++) {
       name = card[i].getElementsByTagName("h4")[0];
       txtValue = name.textContent || name.innerText;
@@ -305,6 +304,162 @@ function searchcountry() {
           card[i].style.display = "none";
       }
   }
+  tabABC = document.getElementById("nav-abc-tab");
+  tabDEF = document.getElementById("nav-def-tab");
+  tabGHI = document.getElementById("nav-ghi-tab");
+  tabJKL = document.getElementById("nav-jkl-tab");
+  tabMNO = document.getElementById("nav-mno-tab");
+  tabPQRS = document.getElementById("nav-pqrs-tab");
+  tabTUV = document.getElementById("nav-tuv-tab");
+  tabWXYZ = document.getElementById("nav-wxyz-tab");
+
+  contABC = document.getElementById("nav-abc");
+  contDEF = document.getElementById("nav-def");
+  contGHI = document.getElementById("nav-ghi");
+  contJKL = document.getElementById("nav-jkl");
+  contMNO = document.getElementById("nav-mno");
+  contPQRS = document.getElementById("nav-pqrs");
+  contTUV = document.getElementById("nav-tuv");
+  contWXYZ = document.getElementById("nav-wxyz");
+ 
+ //var tab = ["tabABC","tabDEF","tabGHI","tabJKL","tabMNO","tabPQRS","tabTUV","tabWXYZ"]  ;
+ //var cont = ["contABC","contDEF","contGHI","contJKL","contMNO","contPQRS","contTUV","contWXYZ"]  ;
+ //var func = ["ABC","DEF","GHI","JKL","MNO","PQRS","TUV","WXYZ"]  ;
+
+  function disable(){
+    //for (i = 0; i < tab.length; i++) {
+     // tab[i].disabled = true;
+    //};
+    tabABC.disabled = true;
+    tabDEF.disabled = true;
+    tabGHIdisabled = true;
+    tabJKL.disabled = true;
+    tabMNO.disabled = true;
+    tabPQRS.disabled = true;
+    tabTUV.disabled = true;
+    tabWXYZ.disabled = true;
+    tabABC.classList.remove("active");
+    contABC.classList.remove("active");
+    contABC.classList.remove("show");
+  }
+  function enable(){
+    tabABC.disabled = false;
+    tabDEF.disabled = false;
+    tabGHIdisabled = false;
+    tabJKL.disabled = false;
+    tabMNO.disabled = false;
+    tabPQRS.disabled =false;
+    tabTUV.disabled = false;
+    tabWXYZ.disabled = false;
+   
+  }
+  function ABC(){
+    disable();
+    tabABC.disabled = false;
+    tabABC.classList.add("active");
+    contABC.classList.add("active");
+    contABC.classList.add("show");
+  }
+  function DEF(){
+    disable();
+    tabDEF.disabled = false;
+    tabDEF.classList.add("active");
+    contDEF.classList.add("active");
+    contDEF.classList.add("show");
+  }
+  function GHI(){
+    disable();
+    tabGHI.disabled = false;
+    tabGHI.classList.add("active");
+    contGHI.classList.add("active");
+    contGHI.classList.add("show");
+  }
+  function JKL(){
+    disable();
+    tabJKL.disabled = false;
+    tabJKL.classList.add("active");
+    contJKL.classList.add("active");
+    contJKL.classList.add("show");
+  }
+  function MNO(){
+    disable();
+    tabMNO.disabled = false;
+    tabMNO.classList.add("active");
+    contMNO.classList.add("active");
+    contMNO.classList.add("show");
+  }
+  function PQRS(){
+    disable();
+    tabPQRS.disabled = false;
+    tabPQRS.classList.add("active");
+    contPQRS.classList.add("active");
+    contPQRS.classList.add("show");
+  }
+  function TUV(){
+    disable();
+    tabTUV.disabled = false;
+    tabTUV.classList.add("active");
+    contTUV.classList.add("active");
+    contTUV.classList.add("show");
+  }
+  function WXYZ(){
+    disable();
+    tabWXYZ.disabled = false;
+    tabWXYZ.classList.add("active");
+    contWXYZ.classList.add("active");
+    contWXYZ.classList.add("show");
+  }
+  firstletter = filter.substring(0,1);
+  
+ 
+  switch (firstletter) {
+    case "A":
+    case "B":
+    case "C":
+      ABC();
+      break;
+    case "D":
+    case "E":
+    case "F":
+      DEF();
+      break;
+    case "G":
+    case "H":
+    case "I":
+      GHI();
+      break;
+    case "J":
+    case "K":
+    case "L":
+      JKL();
+      break;
+    case "M":
+    case "N":
+    case "O":
+      MNO();
+      break;
+    case "P":
+    case "Q":
+    case "R":
+    case "S":
+      PQRS();
+      break;
+    case "T":
+    case "U":
+    case "V":
+      TUV();
+      break;
+    case "W":
+    case "X":
+    case "Y":
+    case "Z":
+      WXYZ();
+      break;
+    default:
+      enable();
+  }
+
+  
 }
 
 // Historical Data
