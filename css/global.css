@@ -245,6 +245,14 @@
     padding: 10px 20px;
     font-size: 100%;
 }
+.searchcountry{
+    margin-left: 10px;
+    padding-left: 10px;
+    border-radius: 10px;
+    border: none;
+    
+}
+
 
 @media (max-width: 768px) {
     .country-details-card {
