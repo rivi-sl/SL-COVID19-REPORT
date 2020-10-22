@@ -403,7 +403,7 @@ function searchcountry() {
 // Historical Data
 
 
-const url_to_historical_data_csv = 'https://raw.githubuser countriesDetailsent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv';
+const url_to_historical_data_csv = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv';
 
 async function getHistoryData() {
   const xAxisLabels = [];

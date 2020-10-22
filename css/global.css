@@ -248,17 +248,18 @@
 .searchBox {
     background: #2f3640;
     border-radius: 40px;
-    margin-left: 10px;
-    margin-top: 3px;
+    margin: 3px 10px;
+    display: block;
 }
 
 .searchBox:hover > .searchInput {
     width: 240px;
     padding: 0 6px;
 }
+
 .searchButton {
     color: white;
-    float: right;
+    float: left;
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -267,6 +268,7 @@
     justify-content: center;
     align-items: center;
     transition: 0.4s;
+    margin: 6px;
 }
 
 

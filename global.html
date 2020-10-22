@@ -4,7 +4,7 @@ title: Global
 ---
 
 <link href="./css/global.css" rel="stylesheet">
-
+<div class="container-fluid">
 <div class="margin-top-under-nav">
   <div class="row">
     <div class="col-xl-5 col-a">
@@ -80,13 +80,29 @@ title: Global
         </div>
       </div>
 
+    </div>
+    <!-- <div class="col-md col-c">
+      One of three columns
+    </div> -->
+  </div>
+</div>
+
+
       <!-- bg-white-2 for white theme -->
-      <div class="card bg-dark-2">
+      <div class="card bg-dark-2 margin-bottom-before-footer-huge">
         <div class="card-body global-data text-white font-2">
 
           <h3 class="text-center">Details of Countries</h3>
-
+          
           <nav>
+            <div class="searchBox">
+              <input class="searchInput" type="text"  id="searchcountry" onkeyup="searchcountry()" name="" placeholder="Search">
+              <span class="searchButton">
+                  <i class="material-icons">
+                      search
+                  </i>
+                </span>
+            </div> 
             <div class="nav nav-tabs" id="nav-tab" role="tablist">
               <a class="nav-item nav-link active" id="nav-abc-tab" data-toggle="tab" href="#nav-abc" role="tab" aria-controls="nav-abc" aria-selected="true">ABC</a>
               <a class="nav-item nav-link" id="nav-def-tab" data-toggle="tab" href="#nav-def" role="tab" aria-controls="nav-def" aria-selected="false">DEF</a>
@@ -96,20 +112,15 @@ title: Global
               <a class="nav-item nav-link" id="nav-pqrs-tab" data-toggle="tab" href="#nav-pqrs" role="tab" aria-controls="nav-pqrs" aria-selected="false">PQRS</a>
               <a class="nav-item nav-link" id="nav-tuv-tab" data-toggle="tab" href="#nav-tuv" role="tab" aria-controls="nav-tuv" aria-selected="false">TUV</a>
               <a class="nav-item nav-link" id="nav-wxyz-tab" data-toggle="tab" href="#nav-wxyz" role="tab" aria-controls="nav-wxyz" aria-selected="false">WXYZ</a>
-              <div class="searchBox">
-
-                <input class="searchInput"type="text"  id="searchcountry" onkeyup="searchcountry()" name="" placeholder="Search">
-                <span class="searchButton">
-                    <i class="material-icons">
-                        search
-                    </i>
-                  </span>
-            </div>
+              <br>
+              
                <!--<div class="search-container">
                   <input class="searchcountry" type="text" id="searchcountry" onkeyup="searchcountry()" placeholder="Search for Countries.." title="Type in a name">
               </div>--> 
             </div>
           </nav>
+         
+
           <div class="tab-content" id="nav-tabContent">
             <div class="tab-pane fade show active" id="nav-abc" role="tabpanel" aria-labelledby="nav-abc-tab"></div>
             <div class="tab-pane fade" id="nav-def" role="tabpanel" aria-labelledby="nav-def-tab"></div>
@@ -124,12 +135,6 @@ title: Global
         </div>
       </div>
       
-    </div>
-    <!-- <div class="col-md col-c">
-      One of three columns
-    </div> -->
-  </div>
-</div>
 
 <!-- <h3 class="global-data-caption">Global Data</h3> -->
 
@@ -195,49 +200,7 @@ title: Global
   )
   <br>
   Last updated at : <span id="API_lastUpdated"></span> </h6>-->
-<p class="text-danger margin-bottom-before-footer">Displaying these data is not supported on some of the web browsers,
-  try
-  to go to source link.</p>
-
+</div>
 
 <script src="./js/script-global.js"></script>
 
-
-<!-- <table class="table table-sm n-table-dark table-country-details">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Name</th>
-      <th scope="col">Cases</th>
-      <th scope="col">Deaths</th>
-      <th scope="col">Recovered</th>
-      <th scope="col">Active</th>
-      <th scope="col">Critical</th>
-      <th scope="col">Cases per 1M</th>
-      <th scope="col">Deaths per 1M</th>
-      <th scope="col">Tests</th>
-      <th scope="col">Tests per 1M</th>
-
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table> -->
