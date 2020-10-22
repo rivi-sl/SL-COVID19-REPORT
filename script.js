@@ -1,25 +1,3 @@
-// // Your web app's Firebase configuration
-// var config = {
-//   apiKey: "AIzaSyDQJ5gZ5boj0LV__nyBMcIfCyWNTJKugx8",
-//   authDomain: "covidsl-59df9.firebaseapp.com",
-//   databaseURL: "https://covidsl-59df9.firebaseio.com",
-//   projectId: "covidsl-59df9",
-//   storageBucket: "covidsl-59df9.appspot.com",
-//   messagingSenderId: "816288189009",
-//   appId: "1:816288189009:web:7edaff32bfddf44e0d0670",
-//   measurementId: "G-SKWZ49LYVV"
-// };
-// // Initialize Firebase
-// firebase.initializeApp(config);
-// const db = firebase.firestore();
-
-// const settings = {
-//   timestampsInSnapshots: true
-// };
-// db.settings(settings);
-
-// var docRef = db.collection("data").doc("lk");
-
 var totalInfected = document.getElementById('totalInfected');
 var activeCases = document.getElementById('activeCases');
 var activeCasesNew = document.getElementById('activeCasesNew');
@@ -49,34 +27,6 @@ month[8] = "Sep";
 month[9] = "Oct";
 month[10] = "Nov";
 month[11] = "Dec";
-
-//   totalInfectedno = 189;
-//   recoveredno = 44;
-//   suspectedno = 138;
-//   deathsno = 7;
-
-//   window.document.title = '(' + totalInfectedno + ') ' + window.document.title ; 
-
-//   totalInfected.innerHTML = totalInfectedno;
-//   activeCases.innerHTML = totalInfectedno - (recoveredno + deathsno);
-//   recovered.innerHTML = recoveredno;
-//   suspected.innerHTML = suspectedno;
-//   deaths.innerHTML = deathsno;
-
-//   deathsRateno =  (deathsno/totalInfectedno)*100;
-//   recoveryRateno = (recoveredno/totalInfectedno)*100;
-  
-//   deathRate.innerHTML = (Math.floor(deathsRateno*100)/100) + '%' ;
-//   recoveryRate.innerHTML = (Math.floor(recoveryRateno*100)/100) + '%';
-
-//   activeCases2.innerHTML = totalInfectedno - (recoveredno + deathsno);
-//   recovered2.innerHTML = recoveredno;
-//   deaths2.innerHTML = deathsno;
-
-//   document.getElementById('loading-news').style.display = "none";
-//   document.getElementById('myInput').style.display = "block";
-//   document.getElementById('see-all').style.display = "block";
-
 // Today
 function getCurrentTime() {
   today = new Date();
@@ -145,7 +95,7 @@ setInterval(getCurrentTime, 1000);
 
 //   deathsRateno =  (deathsno/totalInfectedno)*100;
 //   recoveryRateno = (recoveredno/totalInfectedno)*100;
-  
+
 //   deathRate.innerHTML = (Math.floor(deathsRateno*100)/100) + '%' ;
 //   recoveryRate.innerHTML = (Math.floor(recoveryRateno*100)/100) + '%';
 
@@ -165,20 +115,20 @@ const api_url = "https://www.hpb.health.gov.lk/api/get-current-statistical";
 tableHospitals = document.getElementById('sl-hospitals-details');
 LastUpdated = document.getElementById('API_lastUpdated');
 
-function getData(){
+function getData() {
   fetch(api_url)
-    .then(function(response) {
+    .then(function (response) {
       if (response.status >= 400) {
         throw new Error("Bad response from server");
       }
       return response.json();
     })
-  
-    .then(function(json) {
+
+    .then(function (json) {
       hospitals = json.data.hospital_data;
-      
+
       LastUpdatedAPI = json.data.update_date_time;
-      LastUpdated.innerHTML = LastUpdatedAPI; 
+      LastUpdated.innerHTML = LastUpdatedAPI;
 
       // automatic data
 
@@ -189,7 +139,7 @@ function getData(){
       deathsno = json.data.local_deaths;
       deathsnewno = json.data.local_new_deaths;
 
-      window.document.title = '(' + totalInfectedno + ') ' + window.document.title ; 
+      window.document.title = '(' + totalInfectedno + ') ' + window.document.title;
 
       totalInfected.innerHTML = totalInfectedno;
       activeCases.innerHTML = totalInfectedno - (recoveredno + deathsno);
@@ -199,11 +149,11 @@ function getData(){
       deaths.innerHTML = deathsno;
       deathsNew.innerHTML = '+' + deathsnewno;
 
-      deathsRateno =  (deathsno/totalInfectedno)*100;
-      recoveryRateno = (recoveredno/totalInfectedno)*100;
-      
-      deathRate.innerHTML = (Math.floor(deathsRateno*100)/100) + '%' ;
-      recoveryRate.innerHTML = (Math.floor(recoveryRateno*100)/100) + '%';
+      deathsRateno = (deathsno / totalInfectedno) * 100;
+      recoveryRateno = (recoveredno / totalInfectedno) * 100;
+
+      deathRate.innerHTML = (Math.floor(deathsRateno * 100) / 100) + '%';
+      recoveryRate.innerHTML = (Math.floor(recoveryRateno * 100) / 100) + '%';
 
       activeCases2.innerHTML = totalInfectedno - (recoveredno + deathsno);
       recovered2.innerHTML = recoveredno;
@@ -217,7 +167,7 @@ function getData(){
 
       // 
 
-      hospitals.forEach(function(hospital){  
+      hospitals.forEach(function (hospital) {
 
         let tr = document.createElement('tr');
         let hospitalName = document.createElement('td');
@@ -233,7 +183,7 @@ function getData(){
         hospitalName.setAttribute('class', 'hospital-name');
         hospitalName.textContent = hospitalNameAPI;
         SLpatientsnum.setAttribute('class', 'sl-patients');
-        SLpatientsnum.textContent = SLpatientsnumAPI;  
+        SLpatientsnum.textContent = SLpatientsnumAPI;
         Foreignpatientsnum.setAttribute('class', 'foreign-patients');
         Foreignpatientsnum.textContent = ForeignpatientsnumAPI;
         Totalpatientsnum.setAttribute('class', 'total-patients');
@@ -244,13 +194,13 @@ function getData(){
         tr.appendChild(Foreignpatientsnum);
         tr.appendChild(Totalpatientsnum);
 
-        tableHospitals.appendChild(tr); 
+        tableHospitals.appendChild(tr);
       });
     })
-  
-  }
-  
-  getData();
+
+}
+
+getData();
 
 
 // var news = document.getElementById("news");
@@ -373,7 +323,7 @@ function getData(){
 //   ///
 
 //   news.appendChild(carddiv);
-  
+
 // };
 
 // newsDb = db.collection("news");
@@ -384,7 +334,7 @@ function getData(){
 //     });
 //     // var coll = document.getElementsByClassName("hide-card");
 //     // var i;
-  
+
 //     // for (i = 0; i < coll.length; i++) {
 //     //   coll[i].addEventListener("click", function () {
 //     //     this.classList.toggle("active");
@@ -442,45 +392,6 @@ function hidetabledetails() {
   statusAnimation.style.display = "block";
 }
 
-// //formatdata
-// function formatNumber(num) {
-//   return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
-// }
-
-//api global data
-// const api_url = "https://www.hpb.health.gov.lk/api/get-current-statistical";
-// var globalTotalAPI, globalDeathsAPI, globalRecoveredAPI, globalCasesTodayAPI, globalDeathsTodayAPI;
-
-// globalTotal = document.getElementById('global_total');
-// globalDeaths = document.getElementById('global_deaths');
-// globalRecovered = document.getElementById('global_recovered');
-// globalCasesToday = document.getElementById('global_cases_today');
-// globalDeathsToday = document.getElementById('global_deaths_today');
-// LastUpdated = document.getElementById('API_lastUpdated');
-
-// async function getData() {
-//   const response = await fetch(api_url);
-//   const all_data = await response.json();
-//   const data = all_data.data;
-
-//   globalTotalAPI = data.global_total_cases;
-//   globalDeathsAPI = data.global_deaths;
-//   globalRecoveredAPI = data.global_recovered;
-//   globalCasesTodayAPI = data.global_new_cases;
-//   globalDeathsTodayAPI = data.global_new_deaths;
-//   LastUpdatedAPI = data.update_date_time;
-
-//   globalTotal.innerHTML = formatNumber(globalTotalAPI);
-//   globalDeaths.innerHTML = formatNumber(globalDeathsAPI);
-//   globalRecovered.innerHTML = formatNumber(globalRecoveredAPI);
-//   globalCasesToday.innerHTML = formatNumber(globalCasesTodayAPI);
-//   globalDeathsToday.innerHTML = formatNumber(globalDeathsTodayAPI);
-//   LastUpdated.innerHTML = LastUpdatedAPI;
-
-// }
-
-// getData();
-
 function detectBrowser() {
   if ((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf('OPR')) != -1) {
     // alert('Opera');
@@ -508,12 +419,12 @@ const lk_historical_data_csv = 'https://raw.githubusercontent.com/microsoft/Bing
 
 // getHistoryData();
 
-async function getHistoryData(){
+async function getHistoryData() {
   const xAxisLabels_lk = [];
   const CasesData = [];
   const DeathsData = [];
   const RecoveriesData = [];
-  
+
   // const response_his = await fetch('./csv/test.csv');
   const response_lk = await fetch(lk_historical_data_csv);
 
@@ -528,13 +439,13 @@ async function getHistoryData(){
   var rowdata = [];
 
   headersLength = topics.length;
-  for(a=0; a<headersLength; a++){
-    console.log(topics[a]);
-  }
+    // for (a = 0; a < headersLength; a++) {
+    //   console.log(topics[a]);
+    // }
 
-  for(a=0; a<rowsLength; a++){
+  for (a = 0; a < rowsLength; a++) {
     rowdata = rows[a].split(',');
-    if(rowdata[12]=="Sri Lanka"){
+    if (rowdata[12] == "Sri Lanka") {
       console.log(true);
       xAxisLabels_lk.push(rowdata[1]);
       CasesData.push(rowdata[2]);
@@ -542,89 +453,100 @@ async function getHistoryData(){
       RecoveriesData.push(rowdata[6]);
     }
   }
-  
-    
 
 
-  // const casesDaily = rows[1].split(',');
-  // casesDaily.forEach(elt => {
-  //   CasesData.push(elt);
-  // });
-
-  // const deathsDaily = rows[2].split(',');
-  // deathsDaily.forEach(elt => {
-  //   DeathsData.push(elt);
-  // });
-
-  // const recoveriesdaily = rows[3].split(',');
-  // recoveriesdaily.forEach(elt => {
-  //   RecoveriesData.push(elt);
-  // });
-      
-
-  return{xAxisLabels_lk, CasesData, DeathsData, RecoveriesData};
+  return {
+    xAxisLabels_lk,
+    CasesData,
+    DeathsData,
+    RecoveriesData
+  };
 }
 
 totalCasesCharts();
 
-async function totalCasesCharts(){
+async function totalCasesCharts() {
   const data = await getHistoryData();
   const ctx = document.getElementById('dataChart');
   const myChart = new Chart(ctx, {
-      type: 'line',
-      data: {
-          labels: data.xAxisLabels_lk,
-          datasets: [
-            {
-              label: 'Total Deaths in Sri Lanka',
-              data: data.DeathsData,
-              borderColor: '#dc3545',
-              hoverBackgroundColor: '#fff',       
-              borderWidth: 3
-            },
-            {
-              label: 'Total Recoveries in Sri Lanka',
-              data: data.RecoveriesData,
-              borderColor: '#28a745',
-              hoverBackgroundColor: '#fff',       
-              borderWidth: 3
-            },
-            {
-              label: 'Total Cases in Sri Lanka',
-              data: data.CasesData,
-              borderColor: '#007bff',
-              hoverBackgroundColor: '#fff',       
-              borderWidth: 3
-            },
-        ],
+    type: 'line',
+    data: {
+      labels: data.xAxisLabels_lk,
+      datasets: [{
+          label: 'Total Deaths in Sri Lanka',
+          data: data.DeathsData,
+          borderColor: '#dc3545',
+          hoverBackgroundColor: '#fff',
+          borderWidth: 3
+        },
+        {
+          label: 'Total Recoveries in Sri Lanka',
+          data: data.RecoveriesData,
+          borderColor: '#28a745',
+          hoverBackgroundColor: '#fff',
+          borderWidth: 3
+        },
+        {
+          label: 'Total Cases in Sri Lanka',
+          data: data.CasesData,
+          borderColor: '#007bff',
+          hoverBackgroundColor: '#fff',
+          borderWidth: 3
+        },
+      ],
+    },
+    options: {
+      scales: {
+        xAxes: [{
+          ticks: {
+            fontColor: "rgb(190, 190, 190)",
+            maxRotation: 90,
+            minRotation: 90
+          }
+        }],
+        yAxes: [{
+          ticks: {
+            beginAtZero: false,
+            fontColor: "rgb(190, 190, 190)",
+          }
+        }],
+        scaleLabel: [{
+          scaleTitle: {
+            fontColor: '#fff',
+          }
+        }]
       },
-      options: {
-          scales: {
-              xAxes: [{
-                  ticks: {
-                      fontColor: "rgb(190, 190, 190)",
-                      maxRotation: 90,
-                      minRotation: 90
-                  }                  
-              }],
-              yAxes: [{
-                  ticks: {
-                      beginAtZero: false,
-                      fontColor: "rgb(190, 190, 190)", 
-                  }                  
-              }],
-              scaleLabel: [{
-                  scaleTitle:{
-                    fontColor: '#fff',
-                  }                
-              }]
-          },
-          legend: {
-            position: 'left',
-            labels: {
-                fontColor: 'white',
-            },
-        }
+      legend: {
+        position: 'left',
+        labels: {
+          fontColor: '#989898',
+        },
       }
-    });
+    }
+  });
 }
+
+const btn = document.querySelector(".btn-toggle");
+const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+const currentTheme = localStorage.getItem("theme");
+if (currentTheme == "dark") {
+  document.body.classList.toggle("dark-theme");
+} else if (currentTheme == "light") {
+  document.body.classList.toggle("light-theme");
+}
+
+btn.addEventListener("click", function () {
+  if (prefersDarkScheme.matches) {
+    document.body.classList.toggle("light-theme");
+    var theme = document.body.classList.contains("light-theme")
+      ? "light"
+      : "dark";
+  } else {
+    document.body.classList.toggle("dark-theme");
+    var theme = document.body.classList.contains("dark-theme")
+      ? "dark"
+      : "light";
+  }
+  localStorage.setItem("theme", theme);
+});
