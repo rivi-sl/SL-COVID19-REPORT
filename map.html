@@ -3,6 +3,8 @@ layout: default
 title: Maps
 ---
 
+
+
 <div class="col-md-5 margin-top-under-nav map-centers-sl">
 <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1PuiuCde9NbpdzHzlH3a-Mq2AaDGqMIg_" class="map-centers-sl-frame" width="100%" height="480"
   bis_size="{&quot;x&quot;:689,&quot;y&quot;:91,&quot;w&quot;:540,&quot;h&quot;:480,&quot;abs_x&quot;:689,&quot;abs_y&quot;:91}"
@@ -14,3 +16,33 @@ title: Maps
 <div class="col-xl-8 col-12 mx-auto margin-bottom-before-footer-huge" id="confirmedMap">
   {% include map.html %}
 </div>
+
+<style>
+  
+@media (prefers-color-scheme: dark) {
+body {
+    --text-color: #eee;
+    --bkg-color: #121212;
+}
+body.light-theme {
+    --text-color: #222;
+    --bkg-color: #fff;
+}
+} 
+
+body {
+background: var(--bkg-color);
+color: var(--text-color);
+}
+  
+.btn-toggle{
+    background-color:var(--text-color);
+    color: var(--bkg-color);
+    padding: 2px;
+    margin: 2px 5px;
+}
+
+  .caption-2 {
+    color: var(--text-color) !important;
+}
+</style>
