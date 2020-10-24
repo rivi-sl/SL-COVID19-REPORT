@@ -3,11 +3,27 @@
 }
 
 .bg-dark-2 {
-    background-color: rgb(71, 76, 80);
+    background-color: rgba(0, 0, 0, 0.356);
 }
 
 .bg-transparent-dark {
     background-color: #ffffffbe;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        --text-color: #eee;
+        --bkg-color: #121212;
+    }
+    body.light-theme {
+        --text-color: #222;
+        --bkg-color: #fff;
+    }
+    } 
+
+body {
+    background: var(--bkg-color) !important;
+    color: var(--text-color);
 }
 
 .b-blue {

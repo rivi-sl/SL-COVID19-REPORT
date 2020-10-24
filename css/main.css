@@ -9,8 +9,7 @@ body {
     overflow-x: hidden;
 }
 
-
- @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
 body {
     --text-color: #eee;
     --bkg-color: #121212;
@@ -22,7 +21,7 @@ body.light-theme {
 } 
 
 body {
-background: var(--bkg-color) !important;
+background: var(--bkg-color);
 color: var(--text-color);
 }
   
