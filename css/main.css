@@ -9,27 +9,34 @@ body {
     overflow-x: hidden;
 }
 
-@media (prefers-color-scheme: dark) {
-body {
+
+.dark-theme{
     --text-color: #eee;
     --bkg-color: #121212;
 }
-body.light-theme {
+.light-theme {
     --text-color: #222;
     --bkg-color: #fff;
 }
-} 
+ 
 
 body {
+
 background: var(--bkg-color);
 color: var(--text-color);
+
 }
   
 .btn-toggle{
-    background-color:var(--text-color);
-    color: var(--bkg-color);
+    
     padding: 2px;
     margin: 2px 5px;
+ 
+}
+
+.theme{
+    background-color:var(--bkg-color) ;
+    color: var(--text-color);
 }
 
 .font-1 {

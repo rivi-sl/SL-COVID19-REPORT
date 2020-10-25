@@ -39,7 +39,11 @@
             <li class="nav-item {% if page.url == '/map.html' %}active{% endif %}">
               <a class="nav-link" href="./map.html">MAPS</a>
             </li>
-            <button class="btn-toggle">Toggle Dark-Mode</button>
+            <button button type="button" class="btn btn-toggle" onclick="changetheme()">
+              <span class="material-icons" style="color:#eee">
+              brightness_6
+              </span>
+            </button>
 
             <!-- <li class="nav-item {% if page.url == '/timeline.html' %}active{% endif %}">
               <a class="nav-link" href="./timeline.html">TIMELINE</a>

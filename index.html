@@ -4,7 +4,7 @@ title: Home
 ---
 
 
-<div class="row mx-auto row-main-1" style="width: 100%;" onload="detectBrowser()" id="localDetails">
+<div class="row mx-auto row-main-1 theme localDetails" style="width: 100%;" onload="detectBrowser()" id="localDetails">
   <div class="col-xl-8 main-col-1 status-animation-find" tyle="width: 100%;">
 
     <div class="col-xl-6 col-10 font-2 mx-auto now-date-time margin-top-under-nav text-center">
@@ -183,15 +183,18 @@ title: Home
   </div>
 </div>
 
+<div class="row mx-auto theme">
 <h3 class="display-4 caption-2">Local Growth Details</h3>
 
-<div class="chartArea">
+<div class="chartArea ">
 <div class="chartAreaWrapper">
 <canvas id="dataChart" width="100" height="10">
   Your browser does not support the canvas element.
 </canvas> 
 </div>
 </div>
+</div>
+
 
 <style>
   #dataChart{
@@ -226,7 +229,7 @@ title: Home
   
 </script>
 
-<div class="row mx-auto row-main-2" style="width: 100%;">
+<div class="row mx-auto row-main-2 theme" style="width: 100%;">
   <div class="col-xl-4 main-col-1 main-col-b-1 margin-bottom-before-footer-xl" style="width: 100%;">
     <div class="col-xl-12 col-md-8 mx-auto font-1" id="hospitalDetails">
       <h3 class="display-4 caption-2">Hospital Details</h3>
@@ -266,7 +269,7 @@ title: Home
 
     <!-- Removed News -->
 
-    <div class="container font-1" id="emergencyContacts">
+    <div class="container font-1 theme" id="emergencyContacts">
       <div class="card-emergency font-1">
         <div class="row row-cols-1 row-cols-md-3 text-white">
           <div class="col mb-4">
