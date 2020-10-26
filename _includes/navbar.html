@@ -36,9 +36,9 @@
                 <a class="dropdown-item" href="./news.html#archivedNews">Archived News</a>
               </div>
             </li> -->
-            <li class="nav-item {% if page.url == '/map.html' %}active{% endif %}">
+            <!-- <li class="nav-item {% if page.url == '/map.html' %}active{% endif %}">
               <a class="nav-link" href="./map.html">MAPS</a>
-            </li>
+            </li-->
             <button button type="button" class="btn btn-toggle" onclick="changetheme()">
               <span class="material-icons" style="color:#eee">
               brightness_6
@@ -47,7 +47,7 @@
 
             <!-- <li class="nav-item {% if page.url == '/timeline.html' %}active{% endif %}">
               <a class="nav-link" href="./timeline.html">TIMELINE</a>
-            </li> -->
+            </li> 
             <!-- <li class="nav-item {% if page.url == '/doc.html' %}active{% endif %}">
               <a class="nav-link" href="./doc.html">DOCUMENTS</a>
             </li> -->
@@ -75,7 +75,7 @@
     if (prevScrollpos > currentScrollPos) {
       document.getElementById("header-nav").style.top = "0";
     } else {
-      document.getElementById("header-nav").style.top = "-60px";
+      document.getElementById("header-nav").style.top = "-50px";
     }
     prevScrollpos = currentScrollPos;
   }
