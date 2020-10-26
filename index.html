@@ -3,72 +3,73 @@ layout: default
 title: Home
 ---
 
-
-<div class="row mx-auto row-main-1 theme localDetails" style="width: 100%;" onload="detectBrowser()" id="localDetails">
-  <div class="col-xl-8 main-col-1 status-animation-find" tyle="width: 100%;">
-
-    <div class="col-xl-6 col-10 font-2 mx-auto now-date-time margin-top-under-nav text-center">
-      <h5 class="now-date" id="nowDate">Date</h5>
-      <h2 class="now-time" id="nowTime">Time</h2>
+<div class="container-fluid" onload="detectBrowser()">
+  <div class="col-12" id="localDetails">
+    <div class="font-2 mx-auto now-date-time margin-top-under-nav text-center">
+      <h6 class="now-date" id="nowDate">Date</h6>
+      <h5 class="now-time" id="nowTime">Time</h5>
     </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="status-animation col-12 mb-sm-4" id="status-animation">
+        <figure class="animation-cards">
+          <div class="animation-cards-content">
+            <div class="animation-cards-item d-flex align-items-center justify-content-center"
+              onclick="hidestatuscard()">
+              <span>
+                <h2 id="activeCases" class="text-center animation-cards-item-count">
+                  <div class="spinner">
+                    <div class="double-bounce1"></div>
+                    <div class="double-bounce2"></div>
+                  </div>
+                </h2>
+                <div id="activeCasesNew" class="animation-cards-item-count-new">
+                  +00
+                </div>
+                <h4 class="animation-cards-item-subtitle">Active Cases</h2>
+              </span>
+            </div>
+            <div class="animation-cards-item d-flex align-items-center justify-content-center"
+              onclick="hidestatuscard()">
+              <span>
+                <h2 id="recovered" class="text-center animation-cards-item-count">
+                  <div class="spinner">
+                    <div class="double-bounce1"></div>
+                    <div class="double-bounce2"></div>
+                  </div>
+                </h2>
+                <h4 class="animation-cards-item-subtitle">Recovered</h2>
+              </span>
+            </div>
+            <div class="animation-cards-item d-flex align-items-center justify-content-center"
+              onclick="hidestatuscard()">
+              <span>
+                <h2 id="deaths" class="text-center animation-cards-item-count">
+                  <div class="spinner">
+                    <div class="double-bounce1"></div>
+                    <div class="double-bounce2"></div>
+                  </div>
+                </h2>
+                <div id="deathsNew" class="animation-cards-item-count-new">
+                  +00
+                </div>
+                <h4 class="animation-cards-item-subtitle">Deaths</h2>
+              </span>
+            </div>
+            <div class="animation-cards-item d-flex align-items-center justify-content-center"
+              onclick="hidestatuscard()">
+              <span class="shine">
+                <img src="./sl-flag.png" class="animation-card-img">
+              </span>
+            </div>
+          </div>
+        </figure>
+      </div>
 
-    <div class="status-animation" id="status-animation">
-      <figure class="animation-cards">
-        <div class="animation-cards-content">
-          <div class="animation-cards-item d-flex align-items-center justify-content-center" onclick="hidestatuscard()">
-            <span>
-              <h2 id="activeCases" class="text-center animation-cards-item-count">
-                <div class="spinner">
-                  <div class="double-bounce1"></div>
-                  <div class="double-bounce2"></div>
-                </div>
-              </h2>
-              <div id="activeCasesNew" class="animation-cards-item-count-new">
-                +00
-              </div>
-              <h4 class="animation-cards-item-subtitle">Active Cases</h2>
-            </span>
-          </div>
-          <div class="animation-cards-item d-flex align-items-center justify-content-center" onclick="hidestatuscard()">
-            <span>
-              <h2 id="recovered" class="text-center animation-cards-item-count">
-                <div class="spinner">
-                  <div class="double-bounce1"></div>
-                  <div class="double-bounce2"></div>
-                </div>
-              </h2>
-              <h4 class="animation-cards-item-subtitle">Recovered</h2>
-            </span>
-          </div>
-          <div class="animation-cards-item d-flex align-items-center justify-content-center" onclick="hidestatuscard()">
-            <span>
-              <h2 id="deaths" class="text-center animation-cards-item-count">
-                <div class="spinner">
-                  <div class="double-bounce1"></div>
-                  <div class="double-bounce2"></div>
-                </div>
-              </h2>
-              <div id="deathsNew" class="animation-cards-item-count-new">
-                +00
-              </div>
-              <h4 class="animation-cards-item-subtitle">Deaths</h2>
-            </span>
-          </div>
-          <div class="animation-cards-item d-flex align-items-center justify-content-center"
-            onclick="hidestatuscard()">
-            <span class="shine">
-              <img src="./sl-flag.png" class="animation-card-img">
-            </span>
-          </div>
-        </div>
-      </figure>
-    </div>
-
-    <div class="col-12 main-col-1-b table-sl-details-find" style="display: none;" id="table-sl-details"
-      style="width: 100%;">
-      <div class="col-10 mx-auto table-sl-details-1">
+      <div class="mx-auto table-sl-details mb-4" style="display: none;" id="table-sl-details">
         <div class="justify-content-center card-deck">
-          <div class="col col-details mb-4" onclick="hidetabledetails()">
+          <div class="col col-details" onclick="hidetabledetails()">
             <div class="card card-details text-white bg-primary">
               <div class="card-header table-card-header">Active Cases</div>
               <div class="card-body table-card-body">
@@ -84,7 +85,7 @@ title: Home
               </div>
             </div>
           </div>
-          <div class="col col-details mb-4" onclick="hidetabledetails()">
+          <div class="col col-details" onclick="hidetabledetails()">
             <div class="card card-details text-white bg-success">
               <div class="card-header table-card-header">Recovered</div>
               <div class="card-body table-card-body">
@@ -97,7 +98,7 @@ title: Home
               </div>
             </div>
           </div>
-          <div class="col col-details mb-4" onclick="hidetabledetails()">
+          <div class="col col-details" onclick="hidetabledetails()">
             <div class="card card-details text-white bg-danger">
               <div class="card-header table-card-header">Deaths</div>
               <div class="card-body table-card-body">
@@ -115,89 +116,80 @@ title: Home
           </div>
         </div>
       </div>
-    </div>
-  </div>
 
-  <div class="col-xl-4 main-col-2 margin-top-under-nav-xl" style="width: 100%;">
-    <div class="col-xl-12 col-10 mx-auto table-sl-details">
-      <div class="row justify-content-center card-deck">
-        <div class="col col-xl-6 col-md-4 col-details mb-4">
-          <div class="card card-details text-white" style="background-color: #c79600">
-            <div class="card-header table-card-header">Total</div>
-            <div class="card-body table-card-body">
-              <h1 class="card-title" id="totalInfected">
-                <div class="spinner">
-                  <div class="double-bounce1"></div>
-                  <div class="double-bounce2"></div>
-                </div>
-              </h1>
+      <div class="mx-auto table-sl-details mb-4">
+        <div class="justify-content-center card-deck">
+          <div class="col col-details">
+            <div class="card card-details text-white bg-info">
+              <div class="card-header table-card-header">Death Rate</div>
+              <div class="card-body table-card-body">
+                <h1 class="card-title" id="deathRate">
+                  <div class="spinner">
+                    <div class="double-bounce1"></div>
+                    <div class="double-bounce2"></div>
+                  </div>
+                </h1>
+              </div>
             </div>
           </div>
-        </div>
-        <!-- <div class="col col-xl-6 col-md-4 col-details mb-4">
-          <div class="card card-details text-white bg-secondary">
-            <div class="card-header table-card-header">Suspected</div>
-            <div class="card-body table-card-body">
-              <h1 class="card-title" id="suspected">
-                <div class="spinner">
-                  <div class="double-bounce1"></div>
-                  <div class="double-bounce2"></div>
-                </div>
-              </h1>
+          <div class="col col-details">
+            <div class="card card-details text-white bg-info">
+              <div class="card-header table-card-header">Recovery Rate</div>
+              <div class="card-body table-card-body">
+                <h1 class="card-title" id="recoveryRate">
+                  <div class="spinner">
+                    <div class="double-bounce1"></div>
+                    <div class="double-bounce2"></div>
+                  </div>
+                </h1>
+              </div>
             </div>
           </div>
-        </div> -->
-      </div>
-    </div>
-
-    <div class="col-xl-12 col-10 mx-auto table-sl-details-2">
-      <div class="row justify-content-center card-deck">
-        <div class="col col-xl-6 col-md-4 col-details mb-4">
-          <div class="card card-details text-white bg-info">
-            <div class="card-header table-card-header" style="padding: 0.5rem;">Death Rate</div>
-            <div class="card-body table-card-body">
-              <h1 class="card-title" id="deathRate">
-                <div class="spinner">
-                  <div class="double-bounce1"></div>
-                  <div class="double-bounce2"></div>
-                </div>
-              </h1>
-            </div>
-          </div>
-        </div>
-        <div class="col col-xl-6 col-md-4 col-details mb-4">
-          <div class="card card-details text-white bg-info">
-            <div class="card-header table-card-header" style="padding: 0.5rem;">Recovery Rate</div>
-            <div class="card-body table-card-body">
-              <h1 class="card-title" id="recoveryRate">
-                <div class="spinner">
-                  <div class="double-bounce1"></div>
-                  <div class="double-bounce2"></div>
-                </div>
-              </h1>
+          <div class="col col-details">
+            <div class="card card-details text-white" style="background-color: #c79600">
+              <div class="card-header table-card-header">Total</div>
+              <div class="card-body table-card-body">
+                <h1 class="card-title" id="totalInfected">
+                  <div class="spinner">
+                    <div class="double-bounce1"></div>
+                    <div class="double-bounce2"></div>
+                  </div>
+                </h1>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
+    </div>
+
+    <div class="col-md-4">
+      <div class="mx-auto">
+        <canvas id="dataPieChart" width="100" height="75">
+          Your browser does not support the canvas element.
+        </canvas>
+      </div>
     </div>
   </div>
+</div>
+
 </div>
 
 <div class="row mx-auto theme">
-<h3 class="display-4 caption-2">Local Growth Details</h3>
+  <h3 class="display-4 caption-2">Local Growth Details</h3>
 
-<div class="chartArea ">
-<div class="chartAreaWrapper">
-<canvas id="dataChart" width="12450" height="550">
-  Your browser does not support the canvas element.
-</canvas> 
-</div>
-</div>
+  <div class="chartArea ">
+    <div class="chartAreaWrapper">
+      <canvas id="dataChart" width="12450" height="550">
+        Your browser does not support the canvas element.
+      </canvas>
+    </div>
+  </div>
 </div>
 
 
 <style>
-  #dataChart{
+  #dataChart {
     padding: 0 10px;
     /* position: absolute !important; */
   }
@@ -205,29 +197,27 @@ title: Home
   .chartArea {
     overflow-x: auto;
     padding: 30px;
-}
+  }
 
-.chartAreaWrapper {
-  height: 550px;
-  min-width: 100%;
-  position: relative;
-  width: 12450px;
-} 
-
-@media only screen and (max-width: 576px) {
   .chartAreaWrapper {
-    width: 500px;
-  } 
-}
+    height: 550px;
+    min-width: 100%;
+    position: relative;
+    width: 12450px;
+  }
+
+  @media only screen and (max-width: 576px) {
+    .chartAreaWrapper {
+      width: 500px;
+    }
+  }
 </style>
 
 <script>
-
   var c = document.getElementById("dataChart");
-  if(screen.width < 576){
+  if (screen.width < 576) {
     c.height = 400;
   }
-  
 </script>
 
 <div class="row mx-auto row-main-2 theme" style="width: 100%;">

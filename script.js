@@ -115,7 +115,7 @@ const api_url = "https://www.hpb.health.gov.lk/api/get-current-statistical";
 tableHospitals = document.getElementById('sl-hospitals-details');
 LastUpdated = document.getElementById('API_lastUpdated');
 
-function getData() {
+async function getData() {
   fetch(api_url)
     .then(function (response) {
       if (response.status >= 400) {
@@ -132,17 +132,18 @@ function getData() {
 
       // automatic data
 
-      totalInfectedno = json.data.local_total_cases;
-      recoveredno = json.data.local_recovered;
-      casesnewno = json.data.local_new_cases;
+      const totalInfectedno = json.data.local_total_cases;
+      const recoveredno = json.data.local_recovered;
+      const casesnewno = json.data.local_new_cases;
       // suspectedno = doc.data().suspected;
-      deathsno = json.data.local_deaths;
-      deathsnewno = json.data.local_new_deaths;
+      const deathsno = json.data.local_deaths;
+      const deathsnewno = json.data.local_new_deaths;
+      const activeCasesno = json.data.local_total_cases - (json.data.local_recovered + json.data.local_deaths);
 
       window.document.title = '(' + totalInfectedno + ') ' + window.document.title;
 
       totalInfected.innerHTML = totalInfectedno;
-      activeCases.innerHTML = totalInfectedno - (recoveredno + deathsno);
+      activeCases.innerHTML = activeCasesno;
       activeCasesNew.innerHTML = '+' + casesnewno;
       recovered.innerHTML = recoveredno;
       // suspected.innerHTML = suspectedno;
@@ -155,7 +156,7 @@ function getData() {
       deathRate.innerHTML = (Math.floor(deathsRateno * 100) / 100) + '%';
       recoveryRate.innerHTML = (Math.floor(recoveryRateno * 100) / 100) + '%';
 
-      activeCases2.innerHTML = totalInfectedno - (recoveredno + deathsno);
+      activeCases2.innerHTML = activeCasesno;
       recovered2.innerHTML = recoveredno;
       deaths2.innerHTML = deathsno;
       activeCasesNew2.innerHTML = '+' + casesnewno;
@@ -196,11 +197,39 @@ function getData() {
 
         tableHospitals.appendChild(tr);
       });
+      
+      const ctx = document.getElementById('dataPieChart');
+      const myChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          datasets: [{
+              data: [activeCasesno, recoveredno, deathsno],
+              backgroundColor: [
+                '#007bff', '#28a745', '#dc3545aa'
+              ],
+              borderColor: [
+                '#007bff', '#28a745', '#dc3545aa'
+              ],
+          }],
+          
+          labels: [
+              'Active Cases',
+              'Recovered',
+              'Deaths'
+          ]
+      }
+      })
     })
+
+
+    
+
 
 }
 
 getData();
+
+
 
 
 // var news = document.getElementById("news");
@@ -528,6 +557,8 @@ async function totalCasesCharts() {
     }
   });
 }
+
+
 
 function changetheme() {
   var element = document.body
