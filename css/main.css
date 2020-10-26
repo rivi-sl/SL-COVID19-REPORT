@@ -13,30 +13,24 @@ body {
 .dark-theme{
     --text-color: #eee;
     --bkg-color: #121212;
+    --time-gradient: linear-gradient(90deg, rgba(106,185,233,0) 0%, rgba(58,140,190,0.8491771708683473) 15%, rgba(0,66,107,1) 50%, rgba(58,140,190,0.85) 85%, rgba(106,185,233,0) 100%);
 }
 .light-theme {
     --text-color: #222;
     --bkg-color: #fff;
+    --time-gradient: linear-gradient(90deg, rgba(106,185,233,0) 0%, rgba(116,178,217,1) 15%, rgba(174,224,255,1) 50%, rgba(116,178,217,1) 85%, rgba(106,185,233,0) 100%);
 }
  
-
-body {
-
-background: var(--bkg-color);
-color: var(--text-color);
-
-}
   
 .btn-toggle{
-    
     padding: 2px;
     margin: 2px 5px;
- 
 }
 
 .theme{
     background-color:var(--bkg-color) ;
     color: var(--text-color);
+    
 }
 
 .font-1 {
@@ -175,10 +169,23 @@ color: var(--text-color);
 }
 
 .now-date-time {
-    background-color: rgba(0, 0, 0, 0.356);
+    background: rgb(106,185,233);
+    background: var(--time-gradient);
     color: var(--text-color);
     padding: 0.5rem;
     margin-bottom: 20px;
+}
+
+.now-date-time h6.now-date{
+    font-size: 1rem;
+    padding: 0 ;
+    margin: 0;
+}
+
+.now-date-time h5.now-time{
+    font-size: 1.2rem ;
+    padding: 0;
+    margin: 0;
 }
 
 /* Status-Animation */
@@ -500,19 +507,11 @@ color: var(--text-color);
     font-family: 'Inconsolata', monospace;
     width: 100%;
     transition: 2s;
-color: var(--text-color);
+    color: var(--text-color);
 
 }
 
 .table-sl-details {
-    text-align: center;
-    font-family: 'Inconsolata', monospace;
-    width: 100%;
-color: var(--text-color);
-
-}
-
-.table-sl-details-2 {
     text-align: center;
     font-family: 'Inconsolata', monospace;
     width: 100%;
@@ -638,7 +637,6 @@ ul.timeline>li:before {
 
 .table-card-header {
     font-size: 120%;
-    padding: 0.5rem;
 }
 
 .table-card-body {
