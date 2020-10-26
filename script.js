@@ -476,6 +476,7 @@ async function totalCasesCharts() {
           label: 'Total Deaths in Sri Lanka',
           data: data.DeathsData,
           borderColor: '#dc3545',
+          backgroundColor: '#dc3545aa',
           hoverBackgroundColor: '#fff',
           borderWidth: 3
         },
@@ -483,6 +484,7 @@ async function totalCasesCharts() {
           label: 'Total Recoveries in Sri Lanka',
           data: data.RecoveriesData,
           borderColor: '#28a745',
+          backgroundColor: '#28a745aa',
           hoverBackgroundColor: '#fff',
           borderWidth: 3
         },
@@ -490,6 +492,7 @@ async function totalCasesCharts() {
           label: 'Total Cases in Sri Lanka',
           data: data.CasesData,
           borderColor: '#007bff',
+          backgroundColor: '#007bffaa',
           hoverBackgroundColor: '#fff',
           borderWidth: 3
         },
@@ -529,5 +532,4 @@ async function totalCasesCharts() {
 function changetheme() {
   var element = document.body
   element.classList.toggle("dark-theme");
-  
 }
